@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>NextGen Kicks - Contact</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: black;
+      color: white;
+    }
+
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 15px 40px;
+      background-color: black;
+      border-bottom: 2px solid red;
+      position: relative;
+    }
+
+    .logo {
+      font-size: 22px;
+      color: white;
+    }
+
+    .logo span {
+      color: red;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 30px;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 28px;
+      color: white;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    .form-container {
+      background: white;
+      color: black;
+      max-width: 700px;
+      margin: 80px auto;
+      padding: 40px;
+      border-radius: 5px;
+    }
+
+    .form-container h2 {
+      font-size: 28px;
+    }
+
+    .form-row {
+      display: flex;
+      gap: 20px;
+      margin-top: 20px;
+      flex-wrap: wrap;
+    }
+
+    .form-row input,
+    .form-row select {
+      flex: 1;
+      padding: 10px;
+      font-size: 16px;
+    }
+
+    .phone-group {
+      display: flex;
+      gap: 10px;
+      flex: 1;
+    }
+
+    .phone-group select {
+      width: 100px;
+    }
+
+    .phone-group input {
+      flex: 1;
+    }
+
+    .form-group {
+      margin-top: 20px;
+    }
+
+    .form-group textarea {
+      width: 100%;
+      padding: 10px;
+      height: 100px;
+      font-size: 16px;
+    }
+
+    .submit-btn {
+      background-color: #2e72ff;
+      color: white;
+      padding: 12px 25px;
+      font-size: 18px;
+      border: none;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+
+    .submit-btn:hover {
+      background-color: #1e59d4;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: black;
+        padding: 15px 0;
+        border-top: 1px solid red;
+      }
+
+      .nav-links.show {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .form-row {
+        flex-direction: column;
+      }
+
+      .phone-group {
+        flex-direction: row;
+        flex-wrap: nowrap;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="navbar">
+    <div class="logo">NEXTGEN <span>KICKS</span></div>
+
+    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+
+    <div class="nav-links" id="navLinks">
+      <a href="home.html">HOME</a>
+      <a href="product.html">PRODUCT</a>
+      <a href="about.html">ABOUT</a>
+      <a href="contact.html" class="active">CONTACT</a>
+    </div>
+  </div>
+
+  <div class="form-container">
+    <h2>Contact us</h2>
+    <form>
+      <div class="form-row">
+        <input type="text" placeholder="First name" name="firstName">
+        <input type="text" placeholder="Last name" name="lastName">
+      </div>
+      <div class="form-row">
+        <input type="email" placeholder="Email *" name="email" required>
+        <div class="phone-group">
+          <select name="countryCode" required>
+            <option value="+1">+1 (US)</option>
+            <option value="+44">+44 (UK)</option>
+            <option value="+61">+61 (AU)</option>
+            <option value="+91">+91 (IN)</option>
+          </select>
+          <input type="tel" placeholder="📞 Phone" name="phone">
+        </div>
+      </div>
+      <div class="form-group">
+        <textarea placeholder="Message *" required></textarea>
+      </div>
+      <button type="submit" class="submit-btn">Submit</button>
+    </form>
+  </div>
+
+  <script>
+    function toggleMenu() {
+      const navLinks = document.getElementById("navLinks");
+      navLinks.classList.toggle("show");
+    }
+  </script>
+
+</body>
+</html>
